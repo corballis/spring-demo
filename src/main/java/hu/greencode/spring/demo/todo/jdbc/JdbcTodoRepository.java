@@ -12,7 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Collection;
 
-@Repository
+@Repository("db")
 public class JdbcTodoRepository implements TodoRepository {
 
     @Autowired

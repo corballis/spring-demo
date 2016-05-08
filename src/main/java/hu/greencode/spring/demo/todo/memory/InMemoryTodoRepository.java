@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-@Repository
+@Repository("memory")
 public class InMemoryTodoRepository implements TodoRepository {
 
     public Map<String, Todo> todos = new HashMap<String, Todo>();

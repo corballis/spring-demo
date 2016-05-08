@@ -1,15 +1,18 @@
 package hu.greencode.spring.demo.todo.core;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class TodoManager {
 
     @Autowired
+    @Qualifier("memory")
     private TodoRepository repository;
 
     public void manageTodos() {
+        System.out.println("I am using " + repository.getClass().getCanonicalName() + " as repository");
         System.out.println("TODOs at startup");
         System.out.println(repository.findAll());
 
